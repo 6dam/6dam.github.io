@@ -16,6 +16,7 @@ document.getElementById("nameInput").addEventListener("keypress", function(event
 */
 var selectedBox;
 var searchInput = document.getElementById("searchInput");
+var autocompleteList = document.getElementById("autocomplete-list");
 
 var boxA1 = document.getElementById("boxA1");
 var boxA2 = document.getElementById("boxA2");
@@ -83,3 +84,29 @@ boxA1.addEventListener("click", function() {
     //console.log(selectedBox);
 });
 */
+
+function updateAutocompleteList(filteredSuggestions) {
+    autocompleteList.innerHTML = ''; // Clear previous suggestions
+    filteredSuggestions.forEach(suggestion => {
+        const listItem = document.createElement('li');
+        listItem.textContent = suggestion;
+        listItem.addEventListener('click', () => {
+            searchInput.value = suggestion;
+            autocompleteList.innerHTML = ''; // Clear autocomplete list after selection
+        });
+        autocompleteList.appendChild(listItem);
+    });
+}
+// Event listener for input
+searchInput.addEventListener('input', function() {
+    const searchText = this.value.toLowerCase();
+    const filteredSuggestions = PLAYERS.filter(suggestion =>
+        suggestion.toLowerCase().indexOf(searchText) !== -1
+    );
+    updateAutocompleteList(filteredSuggestions);
+});
+document.addEventListener('click', function(event) {
+    if (!autocompleteList.contains(event.target) && event.target !== searchInput) {
+        autocompleteList.innerHTML = '';
+    }
+});

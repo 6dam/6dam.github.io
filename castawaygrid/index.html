@@ -10,32 +10,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-.grid-container {
-           display: grid;
-           grid-template-columns: auto auto auto auto;
-           padding: 10px;
-                }
-.grid-item {
-           background-color: rgba(255, 255, 255, 0.8);
-           border: 1px solid rgba(0, 0, 0, 0.8);
-           padding: 20px;
-           font-size: 30px;
-           text-align: center;
-            }
-.container {
-    text-align: center;
-}
-img {
-           width: 200px;  /* specify width */
-           height: 200px; /* specify height */
-           object-fit: contain; /* scale image */
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        padding: 10px;
     }
-h1 {
-    text-align: center;
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+    img {
+        width: 200px;  /* specify width */
+        height: 200px; /* specify height */
+        object-fit: contain; /* scale image */
+    }
+    h1 {
+        text-align: center;
+    }
+    input {
+        width: 200px;
+    }
+
+    #autocomplete-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        border: 1px solid #ccc;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 200px;
+        z-index: 1;
+        background-color: #fff;
+    }
+    #autocomplete-list li {
+        padding: 10px;
+        cursor: pointer;
+    }
+    #autocomplete-list li:hover {
+        background-color: #f0f0f0;
+    }
+
+    .search-container {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+        width: 200px;
     }
 
 </style>
-
 </head>
 
 
@@ -43,9 +70,10 @@ h1 {
 
 <h1>🏝️ Castaway Grid 🥥</h1>
 
-<div class="container">
-    <input type="text" id="searchInput" placeholder="Select a box to guess" disabled>
+<div class="search-container">
     <p id="currentBox">🦀</p>
+    <input type="text" id="searchInput" placeholder="Select a box to guess" disabled>
+    <ul id="autocomplete-list"></ul>
 </div>
 
 
