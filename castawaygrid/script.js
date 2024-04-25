@@ -1,10 +1,10 @@
-
+/*
 function checkName() {
     const inputName = document.getElementById('nameInput').value;
     const resultText = PLAYERS.includes(inputName) ? 'Yes' : 'No';
     document.getElementById('result').textContent = resultText;
     };
-
+*/
 /*
 document.getElementById("nameInput").addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
