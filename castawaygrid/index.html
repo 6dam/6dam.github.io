@@ -1,0 +1,103 @@
+<!--python -m http.server-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="icon" href="data:,">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+.grid-container {
+           display: grid;
+           grid-template-columns: auto auto auto auto;
+           padding: 10px;
+                }
+.grid-item {
+           background-color: rgba(255, 255, 255, 0.8);
+           border: 1px solid rgba(0, 0, 0, 0.8);
+           padding: 20px;
+           font-size: 30px;
+           text-align: center;
+            }
+.container {
+    text-align: center;
+}
+img {
+           width: 200px;  /* specify width */
+           height: 200px; /* specify height */
+           object-fit: contain; /* scale image */
+    }
+h1 {
+    text-align: center;
+    }
+
+</style>
+
+</head>
+
+
+<body>
+
+<h1>🏝️ Castaway Grid 🥥</h1>
+
+<div class="container">
+    <input type="text" id="searchInput" placeholder="Select a box to guess" disabled>
+    <p id="currentBox">🦀</p>
+</div>
+
+
+<div class="grid-container" id="entireGrid">
+
+    <div class="grid-item"></div>
+
+    <div class="grid-item" id="columnA">Column A</div>
+
+    <div class="grid-item" id="columnB">Column B</div>
+
+    <div class="grid-item" id="columnC">Column C</div>
+
+
+    <div class="grid-item" id="row1">Row 1</div>
+
+    <div class="grid-item" id="boxA1">
+        <!--
+        <input type="text" id="nameInput" placeholder="Enter a name">
+        <button onclick="checkName()">Check</button>
+        <p id="result"></p>
+        -->
+    </div>
+
+    <div class="grid-item" id="boxB1">
+        <img src="https://static.wikia.nocookie.net/survivor/images/7/77/S44_Frannie_Marin.jpg/revision/latest/scale-to-width-down/1200?cb=20230131170541" alt="Image 2">
+        <br>Frannie Marin
+    </div>
+
+    <div class="grid-item" id="boxC1"><img src="https://static.wikia.nocookie.net/survivor/images/1/1c/S46_Q_Burdette.jpg/revision/latest/scale-to-width-down/1200?cb=20240205231747" alt="Image 3"></div>  
+    
+
+    <div class="grid-item" id="row2">Row 2</div>
+    
+    <div class="grid-item" id="boxA2"><img src="https://static.wikia.nocookie.net/survivor/images/5/5b/S45_Drew_Basile.jpg/revision/latest?cb=20230906191653" alt="Image 4"></div>
+    
+    <div class="grid-item" id="boxB2"><img src="https://static.wikia.nocookie.net/survivor/images/5/5e/S46_Liz_Wilcox.jpg/revision/latest/scale-to-width-down/1200?cb=20240205230157" alt="Image 5"></div>
+    
+    <div class="grid-item" id="boxC2"><img src="https://static.wikia.nocookie.net/survivor/images/b/b4/S46_Tim_Spicer.jpg/revision/latest/scale-to-width-down/1200?cb=20240205234857" alt="Image 6"></div>  
+    
+
+    <div class="grid-item" id="row3">Row 3</div>
+    
+    <div class="grid-item" id="boxA3"><img src="./img/S37_Christian_Hubicki.jpg" alt="Image 7"></div>
+    
+    <div class="grid-item" id="boxB3"><img src="https://static.wikia.nocookie.net/survivor/images/b/b6/S45_Austin_Li_Coon.jpg/revision/latest?cb=20230906191148" alt="Image 8"></div>
+    
+    <div class="grid-item" id="boxC3"><img src="https://static.wikia.nocookie.net/survivor/images/8/82/S46_Soda_Thompson.jpg/revision/latest/scale-to-width-down/1200?cb=20240205233138" alt="Image 9"></div>  
+</div>
+
+<script src="lists.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
