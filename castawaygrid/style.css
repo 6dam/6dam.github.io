@@ -1,0 +1,122 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+}
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+h1 {
+    text-align: center;
+}
+
+.search-container {
+    width: 400px;
+    position: relative;
+}
+.autocomplete-input {
+    padding: 25px 15px;
+    width: calc(100% - 30px);
+    border-radius: none;
+}
+.autocomplete-list {
+    display: none;
+    position:absolute;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    background-color: #fff; 
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.autocomplete-list li {
+    padding: 15px;
+    width: calc(100% - 30px);
+    cursor: pointer;
+}
+.autocomplete-list li:hover {
+    background-color: #e5e2e2;
+}
+
+#boxA1 {
+    cursor: pointer;
+}
+
+#boxB1 {
+    cursor: pointer;
+}
+
+#boxC1 {
+    cursor: pointer;
+}
+
+#boxA2 {
+    cursor: pointer;
+}
+
+#boxB2 {
+    cursor: pointer;
+}
+
+#boxC2 {
+    cursor: pointer;
+}
+
+#boxA3 {
+    cursor: pointer;
+}
+
+#boxB3 {
+    cursor: pointer;
+}
+
+#boxC3 {
+    cursor: pointer;
+}
+
+
+#boxA1:hover {
+    background-color: #e5e2e2;
+}
+
+#boxB1:hover {
+    background-color: #e5e2e2;
+}
+
+#boxC1:hover {
+    background-color: #e5e2e2;
+}
+
+#boxA2:hover {
+    background-color: #e5e2e2;
+}
+
+#boxB2:hover {
+    background-color: #e5e2e2;
+}
+
+#boxC2:hover {
+    background-color: #e5e2e2;
+}
+
+#boxA3:hover {
+    background-color: #e5e2e2;
+}
+
+#boxB3:hover {
+    background-color: #e5e2e2;
+}
+
+#boxC3:hover {
+    background-color: #e5e2e2;
+}
