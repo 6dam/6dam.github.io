@@ -74,14 +74,14 @@ function colrowNames(list){
             colrowText = "Sole Survivor"
             break;
         case PLAYERLISTS[6]:
-            colrowText = "Medically Evacuated"
+            colrowText = "Medically evacuated"
             break;
         case PLAYERLISTS[7]:
             colrowText = "First to leave"
             break;
     }
     return colrowText;
-}
+} //add stuff to this if I create more lists
 
 const uniqueLists = findValidLists(PLAYERLISTS, 6);
 
@@ -100,14 +100,23 @@ boxC2List = columnC.filter(name => row2.includes(name));
 boxA3List = columnA.filter(name => row3.includes(name));
 boxB3List = columnB.filter(name => row3.includes(name));
 boxC3List = columnC.filter(name => row3.includes(name));
+columnAText = colrowNames(columnA);
+columnBText = colrowNames(columnB);
+columnCText = colrowNames(columnC);
+row1Text = colrowNames(row1);
+row2Text = colrowNames(row2);
+row3Text = colrowNames(row3);
 
-document.getElementById('columnA').textContent = colrowNames(columnA);//columnA;
-document.getElementById('columnB').textContent = colrowNames(columnB);
-document.getElementById('columnC').textContent = colrowNames(columnC);
-document.getElementById('row1').textContent = colrowNames(row1);
-document.getElementById('row2').textContent = colrowNames(row2);
-document.getElementById('row3').textContent = colrowNames(row3);
 
+document.getElementById('columnA').textContent = columnAText;//colrowNames(columnA);
+document.getElementById('columnB').textContent = columnBText;//colrowNames(columnB);
+document.getElementById('columnC').textContent = columnCText;//colrowNames(columnC);
+document.getElementById('row1').textContent = row1Text;//colrowNames(row1);
+document.getElementById('row2').textContent = row2Text;//colrowNames(row2);
+document.getElementById('row3').textContent = row3Text;//colrowNames(row3);
+
+//This displays the list of correct answers for the intersection.
+/*
 document.getElementById('boxA1').textContent = boxA1List;
 document.getElementById('boxB1').textContent = boxB1List;
 document.getElementById('boxC1').textContent = boxC1List;
@@ -117,8 +126,7 @@ document.getElementById('boxC2').textContent = boxC2List;
 document.getElementById('boxA3').textContent = boxA3List;
 document.getElementById('boxB3').textContent = boxB3List;
 document.getElementById('boxC3').textContent = boxC3List;
-
-//use a switch case to get strings for the column and row text depending on if the list matches an element of PLAYERLISTS.
+*/
 
 /*
 selectedLists = getRandomLists(PLAYERLISTS, 6);
