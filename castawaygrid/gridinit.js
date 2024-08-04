@@ -79,6 +79,12 @@ function colrowNames(list){
         case PLAYERLISTS[7]:
             colrowText = "First to leave"
             break;
+        case PLAYERLISTS[8]:
+            colrowText = "Runner-up (2nd or 3rd)"
+            break;
+        case PLAYERLISTS[9]:
+            colrowText = "Competed twice or more"
+            break;
     }
     return colrowText;
 } //add stuff to this if I create more lists

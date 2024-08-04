@@ -1,7 +1,18 @@
 var searchInput = document.getElementById("castaway-input");
 var autocompleteList = document.getElementById("castaway-autocomplete");
 var guesses = 0;
+var correctGuesses = 0;
 var selectedBoxID = "";
+var gamestate = "active";
+var a1Answer = "";
+var a2Answer = "";
+var a3Answer = "";
+var b1Answer = "";
+var b2Answer = "";
+var b3Answer = "";
+var c1Answer = "";
+var c2Answer = "";
+var c3Answer = "";
 
 function loadListIntoElement(list,element) {
     if (list){
@@ -27,15 +38,17 @@ function handleItemClick(itemText) {
     //autocompleteList.style.display = "none"; // Hide the list after selecting an item
     switch (selectedBoxID){
         case "boxA1": 
-            if (boxA1List.includes(itemText)){
+            if (boxA1List.includes(itemText) && itemText != a2Answer && itemText != a3Answer && itemText != b1Answer && itemText != b2Answer && itemText != b3Answer && itemText != c1Answer && itemText != c2Answer && itemText != c3Answer){
                 //if itemText is in the A1 filtered list, add the image and increment up the guesses.
                 addImage(itemText,selectedBoxID);
                 autocompleteList.style.display = "none";
                 searchInput.value = ""
                 guesses++;
+                correctGuesses++;
+                a1Answer = itemText;
                 document.getElementById('currentGuesses').textContent = guesses;
                 document.getElementById('currentBox').textContent = '🦀';
-                document.getElementById('boxA1').style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                document.getElementById('boxA1').style.backgroundColor = '#cdfec2';
                 document.getElementById('boxA1').style.cursor = "auto";
                 break;
             } else { //else, hide the display and tick up the guesses.
@@ -47,14 +60,16 @@ function handleItemClick(itemText) {
             }
         
         case "boxA2":
-            if (boxA2List.includes(itemText)){
+            if (boxA2List.includes(itemText) && itemText != a1Answer && itemText != a3Answer && itemText != b1Answer && itemText != b2Answer && itemText != b3Answer && itemText != c1Answer && itemText != c2Answer && itemText != c3Answer){
                 addImage(itemText,selectedBoxID);
                 autocompleteList.style.display = "none";
                 searchInput.value = ""
                 guesses++;
+                correctGuesses++;
+                a2Answer = itemText;
                 document.getElementById('currentGuesses').textContent = guesses;
                 document.getElementById('currentBox').textContent = '🦀';
-                document.getElementById('boxA2').style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                document.getElementById('boxA2').style.backgroundColor = '#cdfec2';
                 document.getElementById('boxA2').style.cursor = "auto";
                 break;
             } else {
@@ -66,14 +81,16 @@ function handleItemClick(itemText) {
             }    
         
         case "boxA3": 
-            if (boxA3List.includes(itemText)){
+            if (boxA3List.includes(itemText) && itemText != a1Answer && itemText != a2Answer && itemText != b1Answer && itemText != b2Answer && itemText != b3Answer && itemText != c1Answer && itemText != c2Answer && itemText != c3Answer){
                 addImage(itemText,selectedBoxID);
                 autocompleteList.style.display = "none";
                 searchInput.value = ""
                 guesses++;
+                correctGuesses++;
+                a3Answer = itemText;
                 document.getElementById('currentGuesses').textContent = guesses;
                 document.getElementById('currentBox').textContent = '🦀';
-                document.getElementById('boxA3').style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                document.getElementById('boxA3').style.backgroundColor = '#cdfec2';
                 document.getElementById('boxA3').style.cursor = "auto";
                 break;
             } else {
@@ -85,14 +102,16 @@ function handleItemClick(itemText) {
             }
         
         case "boxB1": 
-            if (boxB1List.includes(itemText)){
+            if (boxB1List.includes(itemText) && itemText != a1Answer && itemText != a2Answer && itemText != a3Answer && itemText != b2Answer && itemText != b3Answer && itemText != c1Answer && itemText != c2Answer && itemText != c3Answer){
                 addImage(itemText,selectedBoxID);
                 autocompleteList.style.display = "none";
                 searchInput.value = ""
                 guesses++;
+                correctGuesses++;
+                b1Answer = itemText;
                 document.getElementById('currentGuesses').textContent = guesses;
                 document.getElementById('currentBox').textContent = '🦀';
-                document.getElementById('boxB1').style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                document.getElementById('boxB1').style.backgroundColor = '#cdfec2';
                 document.getElementById('boxB1').style.cursor = "auto";
                 break;
             } else {
@@ -104,14 +123,16 @@ function handleItemClick(itemText) {
             }
         
         case "boxB2": 
-            if (boxB2List.includes(itemText)){
+            if (boxB2List.includes(itemText) && itemText != a1Answer && itemText != a2Answer && itemText != a3Answer && itemText != b1Answer && itemText != b3Answer && itemText != c1Answer && itemText != c2Answer && itemText != c3Answer){
                 addImage(itemText,selectedBoxID);
                 autocompleteList.style.display = "none";
                 searchInput.value = ""
                 guesses++;
+                correctGuesses++;
+                b2Answer = itemText;
                 document.getElementById('currentGuesses').textContent = guesses;
                 document.getElementById('currentBox').textContent = '🦀';
-                document.getElementById('boxB2').style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                document.getElementById('boxB2').style.backgroundColor = '#cdfec2';
                 document.getElementById('boxB2').style.cursor = "auto";
                 break;
             } else {
@@ -123,14 +144,16 @@ function handleItemClick(itemText) {
             }
         
         case "boxB3": 
-            if (boxB3List.includes(itemText)){
+            if (boxB3List.includes(itemText) && itemText != a1Answer && itemText != a2Answer && itemText != a3Answer && itemText != b1Answer && itemText != b2Answer && itemText != c1Answer && itemText != c2Answer && itemText != c3Answer){
                 addImage(itemText,selectedBoxID);
                 autocompleteList.style.display = "none";
                 searchInput.value = ""
                 guesses++;
+                correctGuesses++;
+                b3Answer = itemText;
                 document.getElementById('currentGuesses').textContent = guesses;
                 document.getElementById('currentBox').textContent = '🦀';
-                document.getElementById('boxB3').style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                document.getElementById('boxB3').style.backgroundColor = '#cdfec2';
                 document.getElementById('boxB3').style.cursor = "auto";
                 break;
             } else {
@@ -142,14 +165,16 @@ function handleItemClick(itemText) {
             }
         
         case "boxC1": 
-            if (boxC1List.includes(itemText)){
+            if (boxC1List.includes(itemText) && itemText != a1Answer && itemText != a2Answer && itemText != a3Answer && itemText != b1Answer && itemText != b2Answer && itemText != b3Answer && itemText != c2Answer && itemText != c3Answer){
                 addImage(itemText,selectedBoxID);
                 autocompleteList.style.display = "none";
                 searchInput.value = ""
                 guesses++;
+                correctGuesses++;
+                c1Answer = itemText;
                 document.getElementById('currentGuesses').textContent = guesses;
                 document.getElementById('currentBox').textContent = '🦀';
-                document.getElementById('boxC1').style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                document.getElementById('boxC1').style.backgroundColor = '#cdfec2';
                 document.getElementById('boxC1').style.cursor = "auto";
                 break;
             } else {
@@ -161,14 +186,16 @@ function handleItemClick(itemText) {
             }
         
         case "boxC2": 
-            if (boxC2List.includes(itemText)){
+            if (boxC2List.includes(itemText) && itemText != a1Answer && itemText != a2Answer && itemText != a3Answer && itemText != b1Answer && itemText != b2Answer && itemText != b3Answer && itemText != c1Answer && itemText != c3Answer){
                 addImage(itemText,selectedBoxID);
                 autocompleteList.style.display = "none";
                 searchInput.value = ""
                 guesses++;
+                correctGuesses++;
+                c2Answer = itemText;
                 document.getElementById('currentGuesses').textContent = guesses;
                 document.getElementById('currentBox').textContent = '🦀';
-                document.getElementById('boxC2').style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                document.getElementById('boxC2').style.backgroundColor = '#cdfec2';
                 document.getElementById('boxC2').style.cursor = "auto";
                 break;
             } else {
@@ -180,14 +207,16 @@ function handleItemClick(itemText) {
             }
         
         case "boxC3": 
-            if (boxC3List.includes(itemText)){
+            if (boxC3List.includes(itemText) && itemText != a1Answer && itemText != a2Answer && itemText != a3Answer && itemText != b1Answer && itemText != b2Answer && itemText != b3Answer && itemText != c1Answer && itemText != c2Answer){
                 addImage(itemText,selectedBoxID);
                 autocompleteList.style.display = "none";
                 searchInput.value = ""
                 guesses++;
+                correctGuesses++;
+                c3Answer = itemText;
                 document.getElementById('currentGuesses').textContent = guesses;
                 document.getElementById('currentBox').textContent = '🦀';
-                document.getElementById('boxC3').style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                document.getElementById('boxC3').style.backgroundColor = "#cdfec2";
                 document.getElementById('boxC3').style.cursor = "auto";
                 break;
             } else {
@@ -198,6 +227,23 @@ function handleItemClick(itemText) {
                 break;
             }
         
+    }
+
+    searchInput.setAttribute("disabled", "");
+    
+    if (guesses == 9) {
+        //autocompleteList.style.display = "none";
+        //searchInput.value = ""
+        if (correctGuesses == 9){
+            gamestate = "victory";
+            document.getElementById('gameover').textContent = "Congratulations!"
+            document.getElementById('currentBox').textContent = '✨';
+        } else{
+            gamestate = "inactive";
+            document.getElementById('gameover').textContent = "Game Over!";
+            document.getElementById('currentBox').textContent = '🐟';
+        
+        }
     }
 }
 
@@ -211,7 +257,10 @@ function addImage (playername,boxid){
         // Set alt attribute of the image
         img.alt = playername;
         // Append the image to the box element
+        
         box.textContent = playername;
+        var lineBreak = document.createElement('br');
+        box.appendChild(lineBreak);
         box.appendChild(img);
         
     }
@@ -225,7 +274,7 @@ var boxes = document.querySelectorAll('.grid-item[id^="box"]');
 // Add event listener to each box element
 boxes.forEach(function(box) {
     box.addEventListener("click", function() {
-        if (!box.querySelector('img')) {    
+        if (!box.querySelector('img') && gamestate == "active") {    
             searchInput.removeAttribute("disabled");
             selectedBoxID = box.id;
             const column = box.id[3];
@@ -259,30 +308,15 @@ boxes.forEach(function(box) {
                     rowText = '';
             }
             document.getElementById('currentBox').textContent = rowText + " and "+ columnText;
-            document.getElementById('selectedBox').textContent = selectedBoxID;
+            //document.getElementById('selectedBox').textContent = selectedBoxID;
 
-            /*
-            // If you click on a box and it doesn't have an img element
-            if (!box.querySelector('img')) {
-                // Create an img element
-                var img = document.createElement('img');
-                // Set the src attribute of the image
-                let size = SEASON41to46.length;
-                let randindex = Math.floor(Math.random() * size);
-                img.src = FILE_NAMES[PLAYERS.indexOf(SEASON41to46[randindex])]; 
-                // Set alt attribute of the image
-                img.alt = 'Image ' + column + row;
-                // Append the image to the box element
-                box.textContent = SEASON41to46[randindex];
-                box.appendChild(img);
-                
-            }
-                */
         } else {
-            searchInput.setAttribute("disabled", "true");
-            searchInput.value = "";
-            document.getElementById('currentBox').textContent = '🦀';
-            autocompleteList.style.display = "none";
+            if (gamestate == "active"){
+                searchInput.setAttribute("disabled", "true");
+                searchInput.value = "";
+                document.getElementById('currentBox').textContent = '🦀';
+                autocompleteList.style.display = "none";
+            }
         }
     });
 });
@@ -295,7 +329,7 @@ document.addEventListener("click", function(event) {
         }
     });
 
-    if (clickedOutside) {
+    if (clickedOutside && gamestate == "active") {
         // Perform actions when clicked outside the boxes
         searchInput.setAttribute("disabled", "true");
         searchInput.value = "";
