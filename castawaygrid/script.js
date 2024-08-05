@@ -13,6 +13,62 @@ var b3Answer = "";
 var c1Answer = "";
 var c2Answer = "";
 var c3Answer = "";
+document.getElementById('results').style.display = 'none';
+
+function emojiGrid() {
+    if (a1Answer != ""){
+        document.getElementById('A1').textContent = "🟩"
+    } else {
+        document.getElementById('A1').textContent = "⬜"
+    }
+    
+    if (b1Answer != ""){
+        document.getElementById('B1').textContent = "🟩"
+    } else {
+        document.getElementById('B1').textContent = "⬜"
+    }
+    
+    if (c1Answer != ""){
+        document.getElementById('C1').textContent = "🟩"
+    } else {
+        document.getElementById('C1').textContent = "⬜"
+    }
+
+    if (a2Answer != ""){
+        document.getElementById('A2').textContent = "🟩"
+    } else {
+        document.getElementById('A2').textContent = "⬜"
+    }
+    
+    if (b2Answer != ""){
+        document.getElementById('B2').textContent = "🟩"
+    } else {
+        document.getElementById('B2').textContent = "⬜"
+    }
+    
+    if (c2Answer != ""){
+        document.getElementById('C2').textContent = "🟩"
+    } else {
+        document.getElementById('C2').textContent = "⬜"
+    }
+    if (a3Answer != ""){
+        document.getElementById('A3').textContent = "🟩"
+    } else {
+        document.getElementById('A3').textContent = "⬜"
+    }
+    
+    if (b3Answer != ""){
+        document.getElementById('B3').textContent = "🟩"
+    } else {
+        document.getElementById('B3').textContent = "⬜"
+    }
+    
+    if (c3Answer != ""){
+        document.getElementById('C3').textContent = "🟩"
+    } else {
+        document.getElementById('C3').textContent = "⬜"
+    }
+}
 
 function loadListIntoElement(list,element) {
     if (list){
@@ -236,10 +292,16 @@ function handleItemClick(itemText) {
         //searchInput.value = ""
         if (correctGuesses == 9){
             gamestate = "victory";
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('score').textContent = correctGuesses;
+            emojiGrid();
             document.getElementById('gameover').textContent = "Congratulations!"
             document.getElementById('currentBox').textContent = '✨';
         } else{
             gamestate = "inactive";
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('score').textContent = correctGuesses;
+            emojiGrid();
             document.getElementById('gameover').textContent = "Game Over!";
             document.getElementById('currentBox').textContent = '🐟';
         
