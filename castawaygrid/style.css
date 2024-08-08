@@ -120,3 +120,7 @@ h1 {
 #boxC3:hover {
     background-color: #e5e2e2;
 }
+
+p {
+    margin: 0em;
+  }
