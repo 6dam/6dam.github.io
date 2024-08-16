@@ -14,6 +14,7 @@ var c1Answer = "";
 var c2Answer = "";
 var c3Answer = "";
 document.getElementById('results').style.display = 'none';
+document.getElementById('copypaste').style.display = "none";
 
 function emojiGrid() {
     if (a1Answer != ""){
@@ -338,6 +339,7 @@ boxes.forEach(function(box) {
     box.addEventListener("click", function() {
         if (!box.querySelector('img') && gamestate == "active") {    
             searchInput.removeAttribute("disabled");
+            searchInput.focus();
             selectedBoxID = box.id;
             const column = box.id[3];
             const row = box.id[4];
@@ -409,3 +411,43 @@ searchInput.addEventListener("input", function() {
     const filteredData = filterPlayers(PLAYERS, searchInput.value);
     loadListIntoElement(filteredData,autocompleteList)
 });
+
+function giveUp(){
+    gamestate = "inactive";
+    document.getElementById('giveup').style.display = 'none';
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('score').textContent = correctGuesses;
+    emojiGrid();
+    document.getElementById('gameover').textContent = "Game Over!";
+    document.getElementById('currentBox').textContent = '🐟';
+    document.getElementById('copypaste').style.display = "block";
+}
+
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        //alert("Text copied to clipboard: " + text);
+    })
+}
+
+function copyResults(){
+    document.getElementById('copypaste').innerHTML = "Copied!";
+    let today = new Date();
+    let monthFix = today.getMonth() + 1;
+    let todayString = `${today.getFullYear()}-${monthFix}-${today.getDate()}`;
+    let resultgrid =    document.getElementById('A1').textContent +
+                        document.getElementById('B1').textContent +
+                        document.getElementById('C1').textContent + "\n" +
+                        document.getElementById('A2').textContent +
+                        document.getElementById('B2').textContent +
+                        document.getElementById('C2').textContent + "\n" +
+                        document.getElementById('A3').textContent +
+                        document.getElementById('B3').textContent +
+                        document.getElementById('C3').textContent;
+    let url = "https://6dam.github.io/castawaygrid/";
+    let string =    "Castaway Grid - "+todayString+"\n"+"\n"+
+                    "Score: "+correctGuesses+"\n"+"\n"+
+                    resultgrid+"\n"+"\n"+
+                    url;
+
+    copyToClipboard(string);
+}
