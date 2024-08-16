@@ -421,6 +421,7 @@ function giveUp(){
     document.getElementById('gameover').textContent = "Game Over!";
     document.getElementById('currentBox').textContent = '🐟';
     document.getElementById('copypaste').style.display = "block";
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 function copyToClipboard(text) {
